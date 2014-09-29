@@ -9,6 +9,9 @@ public class HuaweiMobileFactory extends AbstractMobileFactory {
 	private static final Manufacturer MANUFACTURER = Manufacturer.HUAWEI;
 
 	public static final HuaweiMobileFactory INSTANCE = new HuaweiMobileFactory();
+	static {
+		registerFactory(INSTANCE);
+	}
 
 	private HuaweiMobileFactory() {
 	}

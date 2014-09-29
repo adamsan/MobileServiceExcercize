@@ -1,11 +1,24 @@
 package com.example.mobilefactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.example.mobileservice.Manufacturer;
 import com.example.mobileservice.Mobile;
 import com.example.mobileservice.Part;
 import com.example.mobileservice.PartType;
 
 public abstract class AbstractMobileFactory implements MobileFactory {
+
+	private static final List<MobileFactory> FACTORIES = new ArrayList<>();
+
+	protected static final void registerFactory(MobileFactory factory) {
+		FACTORIES.add(factory);
+	}
+
+	public static List<MobileFactory> getFactories() {
+		return new ArrayList<>(FACTORIES);
+	}
 
 	protected abstract String getManufacturerName();
 

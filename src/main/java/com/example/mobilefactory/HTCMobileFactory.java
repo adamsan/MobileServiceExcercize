@@ -9,6 +9,9 @@ public class HTCMobileFactory extends AbstractMobileFactory {
 	protected static final Manufacturer MANUFACTURER = Manufacturer.HTC;
 
 	public static final HTCMobileFactory INSTANCE = new HTCMobileFactory();
+	static {
+		registerFactory(INSTANCE);
+	}
 
 	private HTCMobileFactory() {
 	}

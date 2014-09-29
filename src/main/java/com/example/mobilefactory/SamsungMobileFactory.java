@@ -13,6 +13,9 @@ public class SamsungMobileFactory extends AbstractMobileFactory {
 	}
 
 	public static final SamsungMobileFactory INSTANCE = new SamsungMobileFactory();
+	static {
+		registerFactory(INSTANCE);
+	}
 
 	@Override
 	protected String getManufacturerName() {
