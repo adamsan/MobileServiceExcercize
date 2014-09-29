@@ -1,0 +1,4 @@
+com.example.mobilefactory.AppleMobileFactory
+com.example.mobilefactory.HTCMobileFactory
+com.example.mobilefactory.HuaweiMobileFactory
+com.example.mobilefactory.SamsungMobileFactory

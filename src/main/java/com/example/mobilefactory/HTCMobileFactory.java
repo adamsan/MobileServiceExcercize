@@ -8,14 +8,6 @@ public class HTCMobileFactory extends AbstractMobileFactory {
 	protected static final String MANUFACTURER_NAME = "HTC";
 	protected static final Manufacturer MANUFACTURER = Manufacturer.HTC;
 
-	public static final HTCMobileFactory INSTANCE = new HTCMobileFactory();
-	static {
-		registerFactory(INSTANCE);
-	}
-
-	private HTCMobileFactory() {
-	}
-
 	@Override
 	protected String getManufacturerName() {
 		return MANUFACTURER_NAME;

@@ -8,15 +8,6 @@ public class SamsungMobileFactory extends AbstractMobileFactory {
 	private static final String MANUFACTURER_NAME = "Samsung";
 	private static final Manufacturer MANUFACTURER = Manufacturer.SAMSUNG;
 
-	private SamsungMobileFactory() {
-
-	}
-
-	public static final SamsungMobileFactory INSTANCE = new SamsungMobileFactory();
-	static {
-		registerFactory(INSTANCE);
-	}
-
 	@Override
 	protected String getManufacturerName() {
 		return MANUFACTURER_NAME;

@@ -8,15 +8,6 @@ public class AppleMobileFactory extends AbstractMobileFactory {
 	private static final String MANUFACTURER_NAME = "Apple";
 	private static final Manufacturer MANUFACTURER = Manufacturer.APPLE;
 
-	private AppleMobileFactory() {
-
-	}
-
-	public static final AppleMobileFactory INSTANCE = new AppleMobileFactory();
-	static {
-		registerFactory(INSTANCE);
-	}
-
 	@Override
 	protected String getManufacturerName() {
 		return MANUFACTURER_NAME;

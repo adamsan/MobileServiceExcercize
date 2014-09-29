@@ -2,6 +2,7 @@ package com.example.mobilefactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ServiceLoader;
 
 import com.example.mobileservice.Manufacturer;
 import com.example.mobileservice.Mobile;
@@ -11,9 +12,19 @@ import com.example.mobileservice.PartType;
 public abstract class AbstractMobileFactory implements MobileFactory {
 
 	private static final List<MobileFactory> FACTORIES = new ArrayList<>();
+	public static MobileFactory INSTANCE;
 
 	protected static final void registerFactory(MobileFactory factory) {
 		FACTORIES.add(factory);
+	}
+
+	static {
+		ServiceLoader<MobileFactory> factoryImplementations = ServiceLoader.load(MobileFactory.class);
+		for (MobileFactory mobileFactory : factoryImplementations) {
+			registerFactory(mobileFactory);
+			// Needed to load the classes, and they add themselfs in the
+			// FACTORIES list.
+		}
 	}
 
 	public static List<MobileFactory> getFactories() {
