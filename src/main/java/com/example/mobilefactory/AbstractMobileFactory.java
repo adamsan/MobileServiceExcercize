@@ -22,8 +22,6 @@ public abstract class AbstractMobileFactory implements MobileFactory {
 		ServiceLoader<MobileFactory> factoryImplementations = ServiceLoader.load(MobileFactory.class);
 		for (MobileFactory mobileFactory : factoryImplementations) {
 			registerFactory(mobileFactory);
-			// Needed to load the classes, and they add themselfs in the
-			// FACTORIES list.
 		}
 	}
 
